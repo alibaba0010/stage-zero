@@ -1,6 +1,6 @@
 # Stage Two Backend
 
-A simple CRUD operation interfacing with MongoDB
+A simple CRUD(GET) operation using Deno with CORS Handling
 
 ## Installation
 
@@ -14,24 +14,25 @@ deno task dev
 
 # Usage
 
-# Create a user
+# Get user info
 
 ## Route
 
-### http://localhost:3001/api
+### http://localhost:8000
 
 ### https://zuri-interns.onrender.com/api
 
 ```bash
-{
-    "name" : "Edwin",
-    "password": "password"
-}
+
 ## Response
 {
-    "user": {
-        "name": "Edwin",
-        "id": "6500218c9fb59cc2c2ece8ca"
-    }
+  "email": "adedibu21@gmail.com",
+  "current_datetime": "2025-01-29T10:52:39.777Z",
+  "github_url": "https://github.com/alibaba0010/stage-zero"
 }
+
 ```
+
+## Referneces
+
+[HNG Hire Nodejs](https://hng.tech/hire/nodejs-developers)
