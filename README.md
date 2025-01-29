@@ -20,7 +20,7 @@ deno task dev
 
 ### http://localhost:8000
 
-### https://zuri-interns.onrender.com/api
+### https://stage-zero-jlof.onrender.com
 
 ```bash
 
@@ -35,4 +35,4 @@ deno task dev
 
 ## Referneces
 
-[HNG Hire Nodejs](https://hng.tech/hire/nodejs-developers)
+[HNG Hire Nodejs Developers](https://hng.tech/hire/nodejs-developers)
