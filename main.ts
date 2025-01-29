@@ -14,8 +14,8 @@ app.use("*", async (c, next) => {
 app.get("/", (c) => {
   const response = {
     email: "adedibu21@gmail.com",
-    timestamp: new Date().toISOString(),
-    githubUrl: "https://github.com/alibaba0010/stage-zero",
+    current_datetime: new Date().toISOString(),
+    github_url: "https://github.com/alibaba0010/stage-zero",
   };
   return c.json(response);
 });
