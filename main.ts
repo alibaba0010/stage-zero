@@ -42,8 +42,9 @@ function isPrime(num: number): boolean {
   return true;
 }
 
-// Function to check if a number is perfect
+// Function to check if a number is perfect (0 is not perfect)
 function isPerfect(num: number): boolean {
+  if (num <= 0) return false; // Fix: 0 should not be classified as perfect
   let sum = 0;
   for (let i = 1; i < num; i++) {
     if (num % i === 0) sum += i;
@@ -81,15 +82,18 @@ router.get("/api/classify-number", async (ctx: Context) => {
   if (isArmstrong(number)) properties.push("armstrong");
   properties.push(number % 2 === 0 ? "even" : "odd");
 
+  // Fix: Ensure digit sum is numeric and correctly calculated even for negative numbers
+  const digit_sum = Math.abs(number) // Handle negative numbers correctly
+    .toString()
+    .split("")
+    .reduce((sum, digit) => sum + Number(digit), 0);
+
   const responseData = {
     number,
     is_prime: isPrime(number),
     is_perfect: isPerfect(number),
     properties,
-    digit_sum: number
-      .toString()
-      .split("")
-      .reduce((sum, digit) => sum + Number(digit), 0),
+    digit_sum,
     fun_fact: await getFunFact(number),
   };
 
