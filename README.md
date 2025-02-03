@@ -6,6 +6,12 @@ A simple CRUD(GET) operation using Deno with CORS Handling
 
 Git clone the folder
 
+### Install package using
+
+```bash
+deno run -A https://deno.land/x/oak/mod.ts
+```
+
 ### Run the deno application using
 
 ```bash
@@ -18,19 +24,29 @@ deno task dev
 
 ## Route
 
-### http://localhost:8000
+### http://localhost:8000/api/classify-number?number=<value>
 
-### https://stage-zero-jlof.onrender.com
+### https://stage-zero-jlof.onrender.com/api/classify-number?number=<value>
 
 ```bash
 
-## Response
+## Response message
 {
-  "email": "adedibu21@gmail.com",
-  "current_datetime": "2025-01-29T10:52:39.777Z",
-  "github_url": "https://github.com/alibaba0010/stage-zero"
+    "number": 500,
+    "is_prime": false,
+    "is_perfect": false,
+    "properties": [
+        "even"
+    ],
+    "digit_sum": 5,
+    "fun_fact": "500 is the number of planar partitions of 10."
 }
 
+Erro Response message
+{
+    "number": "value",
+    "error": true
+}
 ```
 
 ## Referneces
